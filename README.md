@@ -33,7 +33,7 @@ The prospective matrix is multiplied with ladder matrix to achive prospective tr
 
 <img src="https://github.com/bipulsimkhada/Image/blob/main/CV%20images/prospective%20transformation.png">
 
-#### 1. Rotation
+#### 2. Rotation
 The rotation matrix multiplied with prospective transformed image results in rotated 2D image. 
 
 ```python
@@ -57,7 +57,31 @@ Rz = np.matrix([[cos(θ),   sin(θ),   0,      0],
 ```
 In this project, rotation matrix along Z axis is multiplied with Prospective transformed ladder with rotation angle of 45 degree. 
 
-
 <img src="https://github.com/bipulsimkhada/Image/blob/main/CV%20images/Rotation%20Z.png">
 
+#### 3. Translation 
+The projected ladder is translated by the factor of 2 on each coordinates. The tranlation matrix is given by:
+```python
+#Translate x and y by 2.
+Tr = np.matrix([[1, 0,  0,  2],
+                [0, 1,  0,  2],
+                [0, 0,  1,  2],
+                [0, 0,  0,  1]])
+```
 
+The translation matrix multiplied with projected ladder will produce tranlated image as shown below:
+
+<img src="https://github.com/bipulsimkhada/Image/blob/main/CV%20images/Translation.png">
+
+#### 3. Reflection
+The projected ladder is then reflected along y axis and reflection matrix along y direction is given by:
+```python
+#Reflected along y axis
+Re = np.matrix([[1,     0,      0,      0],
+                [0,     -1,     0,      0],
+                [0,     0,      1,      0],
+                [0,     0,      0,      1]])
+```
+The reflection matrix multiplied with projected ladder will produce reflected image as shown below:
+
+<img src="https://github.com/bipulsimkhada/Image/blob/main/CV%20images/Reflection.png">
