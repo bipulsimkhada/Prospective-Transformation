@@ -33,4 +33,31 @@ The prospective matrix is multiplied with ladder matrix to achive prospective tr
 
 <img src="https://github.com/bipulsimkhada/Image/blob/main/CV%20images/prospective%20transformation.png">
 
+#### 1. Rotation
+The rotation matrix multiplied with prospective transformed image results in rotated 2D image. 
+
+```python
+# Anti-clockwise Rotation along X axis by angle θ
+Rx = np.matrix([[1,     0,          0,         0],
+                [0,     cos(θ),    sin(θ),     0],
+                [0,     -sin(θ),    cos(θ),    0],
+                [0,     0,          0,         1]])
+                
+# Anti-clockwise Rotation along Y axis by angle θ
+Ry = np.matrix([[cos(θ),     0,    sin(θ),    0],
+                [0,          1,     0,        0],
+                [-sin(θ),    0,    cos(θ),    0],
+                [0,          0,    0,         1]]) 
+                
+# Anti-clockwise Rotation along Z axis by angle θ
+Rz = np.matrix([[cos(θ),   sin(θ),   0,      0],
+                [-sin(θ),   cos(θ),    0,      0],
+                [0,        0,         1,      0],
+                [0,        0,         0,      1]])                 
+```
+In this project, rotation matrix along Z axis is multiplied with Prospective transformed ladder with rotation angle of 45 degree. 
+
+
+<img src="https://github.com/bipulsimkhada/Image/blob/main/CV%20images/Rotation%20Z.png">
+
 
